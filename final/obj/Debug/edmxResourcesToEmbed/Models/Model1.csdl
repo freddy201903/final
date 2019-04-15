@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpacepingpongDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DaimandOrder">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dOrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dReceiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DaimandOrderDetail">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dOrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dPrice" Type="Int32" />
+    <Property Name="dQty" Type="Int32" />
+    <Property Name="dIsApproved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DaimandStore">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dPrice" Type="Int32" />
+    <Property Name="dImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FaceRecognization">
+    <Key>
+      <PropertyRef Name="FaceID" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+    <Property Name="FaceID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Points" Type="Int64" Nullable="false" />
+    <Property Name="Diamonds" Type="Int64" Nullable="false" />
+    <Property Name="Victories" Type="Int64" Nullable="false" />
+    <Property Name="PersonID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlayList">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+    <Property Name="Victory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PlayDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="PointOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+    <Property Name="OrderID" Type="Int64" Nullable="false" />
+    <Property Name="Recipient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RecipientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RecipientAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="PointShoppingCart">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberNumber" Type="Int64" Nullable="false" />
+    <Property Name="OrderID" Type="Int64" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CurrentPrice" Type="Int64" Nullable="false" />
+    <Property Name="Amount" Type="Int64" Nullable="false" />
+    <Property Name="CheckOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointStore">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int64" Nullable="false" />
+    <Property Name="Introduction" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Stock" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SpacepingpongDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DaimandOrders" EntityType="Self.DaimandOrder" />
+    <EntitySet Name="DaimandOrderDetails" EntityType="Self.DaimandOrderDetail" />
+    <EntitySet Name="DaimandStores" EntityType="Self.DaimandStore" />
+    <EntitySet Name="FaceRecognizations" EntityType="Self.FaceRecognization" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="PlayLists" EntityType="Self.PlayList" />
+    <EntitySet Name="PointOrders" EntityType="Self.PointOrder" />
+    <EntitySet Name="PointShoppingCarts" EntityType="Self.PointShoppingCart" />
+    <EntitySet Name="PointStores" EntityType="Self.PointStore" />
+  </EntityContainer>
+</Schema>

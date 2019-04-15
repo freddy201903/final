@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SpacepingpongDatabaseEntities-Web.config Connection String" description="SpacepingpongDatabaseEntities 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=spacepingpongserver02.database.windows.net;initial catalog=SpacepingpongDatabase;user id=Space123;password=123Space;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\lab\\FinalProject\\final\\final\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SpacepingpongDatabaseEntities']/@connectionString" />
+  </parameter>
+</parameters>

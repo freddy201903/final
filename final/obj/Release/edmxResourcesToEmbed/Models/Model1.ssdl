@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpacepingpongDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DaimandOrder">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dOrderGuid" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="dReceiver" Type="nvarchar" MaxLength="50" />
+    <Property Name="dEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="dAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="dDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DaimandOrderDetail">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dOrderGuid" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="dProductID" Type="nvarchar" MaxLength="50" />
+    <Property Name="dProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="dPrice" Type="int" />
+    <Property Name="dQty" Type="int" />
+    <Property Name="dIsApproved" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DaimandStore">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dProductID" Type="nvarchar" MaxLength="50" />
+    <Property Name="dProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="dPrice" Type="int" />
+    <Property Name="dImg" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FaceRecognization">
+    <Key>
+      <PropertyRef Name="FaceID" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+    <Property Name="FaceID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="Points" Type="bigint" Nullable="false" />
+    <Property Name="Diamonds" Type="bigint" Nullable="false" />
+    <Property Name="Victories" Type="bigint" Nullable="false" />
+    <Property Name="PersonID" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlayList">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+    <Property Name="Victory" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlayDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+    <Property Name="OrderID" Type="bigint" Nullable="false" />
+    <Property Name="Recipient" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecipientEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecipientAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="OrderDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointShoppingCart">
+    <Key>
+      <PropertyRef Name="Num" />
+    </Key>
+    <Property Name="Num" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberNumber" Type="bigint" Nullable="false" />
+    <Property Name="OrderID" Type="bigint" Nullable="false" />
+    <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CurrentPrice" Type="bigint" Nullable="false" />
+    <Property Name="Amount" Type="bigint" Nullable="false" />
+    <Property Name="CheckOut" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PointStore">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="bigint" Nullable="false" />
+    <Property Name="Introduction" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Stock" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SpacepingpongDatabaseModelStoreContainer">
+    <EntitySet Name="DaimandOrder" EntityType="Self.DaimandOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DaimandOrderDetail" EntityType="Self.DaimandOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DaimandStore" EntityType="Self.DaimandStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceRecognization" EntityType="Self.FaceRecognization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayList" EntityType="Self.PlayList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointOrder" EntityType="Self.PointOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointShoppingCart" EntityType="Self.PointShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PointStore" EntityType="Self.PointStore" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

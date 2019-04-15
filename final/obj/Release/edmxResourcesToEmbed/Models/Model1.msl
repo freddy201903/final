@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpacepingpongDatabaseModelStoreContainer" CdmEntityContainer="SpacepingpongDatabaseEntities">
+    <EntitySetMapping Name="DaimandOrders">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandOrder">
+        <MappingFragment StoreEntitySet="DaimandOrder">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="dOrderGuid" ColumnName="dOrderGuid" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="dReceiver" ColumnName="dReceiver" />
+          <ScalarProperty Name="dEmail" ColumnName="dEmail" />
+          <ScalarProperty Name="dAddress" ColumnName="dAddress" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaimandOrderDetails">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandOrderDetail">
+        <MappingFragment StoreEntitySet="DaimandOrderDetail">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="dOrderGuid" ColumnName="dOrderGuid" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="dProductID" ColumnName="dProductID" />
+          <ScalarProperty Name="dProductName" ColumnName="dProductName" />
+          <ScalarProperty Name="dPrice" ColumnName="dPrice" />
+          <ScalarProperty Name="dQty" ColumnName="dQty" />
+          <ScalarProperty Name="dIsApproved" ColumnName="dIsApproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaimandStores">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.DaimandStore">
+        <MappingFragment StoreEntitySet="DaimandStore">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="dProductID" ColumnName="dProductID" />
+          <ScalarProperty Name="dProductName" ColumnName="dProductName" />
+          <ScalarProperty Name="dPrice" ColumnName="dPrice" />
+          <ScalarProperty Name="dImg" ColumnName="dImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaceRecognizations">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.FaceRecognization">
+        <MappingFragment StoreEntitySet="FaceRecognization">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="FaceID" ColumnName="FaceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Diamonds" ColumnName="Diamonds" />
+          <ScalarProperty Name="Victories" ColumnName="Victories" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayLists">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PlayList">
+        <MappingFragment StoreEntitySet="PlayList">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="Victory" ColumnName="Victory" />
+          <ScalarProperty Name="PlayDate" ColumnName="PlayDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PointOrders">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointOrder">
+        <MappingFragment StoreEntitySet="PointOrder">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="RecipientEmail" ColumnName="RecipientEmail" />
+          <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PointShoppingCarts">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointShoppingCart">
+        <MappingFragment StoreEntitySet="PointShoppingCart">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PointStores">
+      <EntityTypeMapping TypeName="SpacepingpongDatabaseModel.PointStore">
+        <MappingFragment StoreEntitySet="PointStore">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
